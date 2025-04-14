@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search by Movie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .tab {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .tab button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .tab button:hover {
+            background-color: #0056b3;
+        }
+        .tab button.active {
+            background-color: #0056b3;
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+        }
+        .search-container input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        .search-container button {
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .search-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="tab">
+        <button onclick="openPage('/')" id="tab1">Home</button>
+        <button onclick="openPage('/search_by_actor')" id="tab2">Search by Actor</button>
+        <button onclick="openPage('/search_by_movie')" id="tab3" >Search by Movie</button>
+        <button onclick="openPage('/search_by_criteria')" id="tab4">Search by Age</button>
+        <button onclick="openPage('/search4')" id="tab5" class="active">movie details based on genre/category</button>
+
+    </div>
+
+    <div id="content">
+        <h1>movie details based on genre/category</h1>
+        <div class="search-container">
+            <form action="/search4" method="post">
+                <input type="text" name="director_name" placeholder="Enter director name">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openPage(page) {
+            window.location.href = page;
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const path = window.location.pathname;
+            if (path === '/search4') {
+                document.getElementById('tab5').classList.add('active');
+            }
+        });
+    </script>
+
+</body>
+</html>

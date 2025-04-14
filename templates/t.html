@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Movie Database Management System</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        
+        <style>
+        .new-main-heading {
+            margin-top: -150px;
+        }
+        </style>
+    </head>
+<body>
+    <div class="new-background-div">
+        <h1 class="new-main-heading">Search by Actors Age and Release Year</h1>
+    <h2>Movies matching criteria</h2>
+    {% if results %}
+    <ul>
+        {% for row in results %}
+        <li>Movie: {{ row[0] }}, Language: {{ row[1] }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No movies found matching the criteria</p>
+    {% endif %}
+    <div class="back">
+        <button onclick="openPage('/')">Back</button>
+    </div>
+    <script>
+        function openPage(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>

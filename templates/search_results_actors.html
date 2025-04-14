@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Movie Database Management System</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        
+        <style>
+        .new-main-heading {
+            margin-top: -300px;
+        }
+        .j{
+            margin-left: 500px;
+        }
+        .back{
+            margin-left: 200px;
+        }
+        </style>
+    </head>
+<body>
+    <div class="new-background-div">
+        <h1 class="new-main-heading">Search By Actors Age</h1>
+        <div class="j">
+    {% if results %}
+        <h2>Movies in {{ language }} where actors are {{ min_age }} years old or older and born in month {{ birth_month }}</h2>
+        <ul>
+            {% for row in results %}
+                <li>Movie: {{ row[0] }}, Year of Release: {{ row[1] }}, Language: {{ row[2] }}</li>
+                
+                    <li>Actor: {{ row[3] }}, Age: {{ row[5] }}, Date of Birth: {{ row[4] }}</li>
+                
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h2>No movies found in {{ language }} where actors are {{ min_age }} years old or older and born in month {{ birth_month }}</h2>
+    {% endif %}
+    <div class="back">
+        <button onclick="openPage('/')">Back</button>
+</div>
+    </div>
+    <script>
+        function openPage(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>

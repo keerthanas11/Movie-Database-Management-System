@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Movie Database Management System</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <style>
+            .new-main-heading {
+                margin-top: -210px;
+            }
+            .new-search-button{
+                margin-left: 300px;
+            }
+
+            .form-group input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-left: 400px;
+}
+.form-group input[type="text"]:focus {
+    border-color: #141414;
+    box-shadow: 0 0 5px rgba(13, 14, 14, 0.5);
+    outline: none;
+}
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-left: 400px;
+}
+.form-group input[type="number"]:focus {
+    border-color: #141414;
+    box-shadow: 0 0 5px rgba(13, 14, 14, 0.5);
+    outline: none;
+}
+.new-search-button{
+    margin-top: 70px;
+    margin-left: 700px;
+}
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    margin-left:400px;
+}
+            </style>
+    </head>
+<body>
+
+    <div class="new-background-div">
+
+    <div id="content">
+        <h1 class="new-main-heading">Movies Based On Age and Language</h1>
+        <div class="search-container">
+            <form action="/search4" method="post" class="search-form">
+                <div class="form-group">
+                <input type="number" name="age" placeholder="Enter age" min="5" max="100"></div>
+                <div class="form-group">
+                    <select name="language" class="form-control">
+                        <option value="">Select language</option>
+                        <option value="Kannada">Kannada</option>
+                        <option value="Hindi">Hindi</option>
+                        <option value="Telugu">Telugu</option>
+                        <option value="Tamil">Tamil</option>
+                        <option value="Bengali">Bengali</option>
+                        <option value="Malayalam">Malayalam</option>
+                    </select>
+      </div>
+                <div class="form-group">
+                    <select name="birth_month" class="form-control">
+                        <option value="">Select birth month</option>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
+      </div>
+
+                <button class="new-search-button" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</div>
+    <script>
+        function openPage(page) {
+            window.location.href = page;
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const path = window.location.pathname;
+            if (path === '/search_by_age_language') {
+                document.getElementById('tab5').classList.add('active');
+            }
+        });
+    </script>
+
+</body>
+</html>

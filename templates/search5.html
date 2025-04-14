@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Movie Database Management System</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <style>
+            .new-main-heading {
+                margin-top: -210px;
+            }
+            .new-search-button{
+                margin-left: 300px;
+            }
+
+            .form-group input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-left: 350px;
+}
+.form-group input[type="number"]:focus {
+    border-color: #141414;
+    box-shadow: 0 0 5px rgba(13, 14, 14, 0.5);
+    outline: none;
+}
+.new-search-button{
+    margin-top: 10px;
+    margin-left: 600px;
+}
+            </style>
+    </head>
+<body>
+
+    <div class="new-background-div">
+
+    <div id="content">
+        <h1 class="new-main-heading">Search By Count</h1>
+        <div class="search-container">
+            <form action="/search5" method="post" class="search-form">
+                <div class="form-group">
+                <input type="number" name="movie_count" min="1" max="10" placeholder="Enter movie count"></div>
+
+                <button class="new-search-button" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+    </div>
+    <script>
+        function openPage(page) {
+            window.location.href = page;
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const path = window.location.pathname;
+            if (path === '/search_by_count') {
+                document.getElementById('tab6').classList.add('active');
+            }
+        });
+    </script>
+
+</body>
+</html>

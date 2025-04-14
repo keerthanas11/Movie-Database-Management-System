@@ -1,0 +1,268 @@
+@charset "UTF-8";
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+body {
+    font-family: Pacifico;
+    background-color: #f0f0f0; /* Optional: A background color for the body */
+    color: black;
+}
+
+.background-div {
+    background-image: url("https://t4.ftcdn.net/jpg/02/86/32/15/360_F_286321594_HHLM1hCAuqrrqQ0Sv3SKF7uHhmrojMoq.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 1350px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-heading {
+    font-size: 3em;
+    color: #eae4e4;
+    text-shadow: 2px 2px 4px #0c0c0c;
+    margin-bottom: 60px;
+    margin-top: -300px;
+    margin-left: 500px;
+    font-family: 'Pacifico', cursive;
+}
+
+.navbar {
+    background-color: #333;
+    width: 800px;
+    text-align: center;
+    margin-top: -60px;
+    margin-left: 480px;
+}
+
+.nav-tabs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-tabs li {
+    margin: 0 15px;
+}
+
+.nav-tabs a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.2em;
+    padding: 14px 20px;
+    display: block;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.nav-tabs a:hover {
+    background-color: #575757;
+    transform: scale(1.1);
+}
+
+.nav-tabs a:active {
+    background-color: #444;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Raleway', sans-serif;
+}
+
+.new-background-div {
+    background-image: url("https://media.istockphoto.com/id/1337382594/vector/vector-yellow-and-white-background-with-lighting-old-fashioned-camera-on-the-tripod.jpg?s=612x612&w=0&k=20&c=ONwtM_IDyvjgf9pQHnx_vC5-w4F4gPug3MygkR-Q3X0=");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 1350px;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-main-heading {
+    font-size: 3em;
+    color: #130202;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    margin-top: -450px;
+    margin-left: 440px;
+}
+
+.new-search-bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-left: 440px;
+}
+
+.new-search-bar {
+    width: 350px;
+    padding: 15px 20px;
+    font-size: 1.5em;
+    border: none;
+    border-radius:30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    outline: none;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.new-search-button {
+    background-color: #333;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 20px;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    margin-left: 110px;
+    color: #f0f0f0;
+    width:100px;
+}
+
+.new-search-button:hover {
+    background-color: #575757;
+    transform: scale(1.05);
+}
+
+.search-icon {
+    width: 24px;
+    height: 24px;
+    filter: invert(1); /* Ensure the icon is white */
+}
+
+.new-search-bar::placeholder {
+    color: #9a8d8d;
+}
+
+.new-search-bar:focus {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+/* Add this to your existing styles.css */
+
+/* Button styling */
+
+.back button{
+
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2em;
+    color: white;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.back button:hover{
+    background-color: #575757;
+    transform: scale(1.1);
+
+}
+.navbar button {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2em;
+    color: white;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar button:hover {
+    background-color: #575757;
+    transform: scale(1.1);
+}
+
+.navbar button:active {
+    background-color: #444;
+    transform: scale(1.05);
+}
+
+
+.search-form{
+    margin-top:10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    width:300px;
+    margin-left: 190px;
+    
+   
+}
+
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form-group input[type="number"]:focus {
+    border-color: #141414;
+    box-shadow: 0 0 5px rgba(13, 14, 14, 0.5);
+    outline: none;
+}
+
+/*.search-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0e0f10;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 150px;
+}
+
+.search-form button:hover {
+    background-color: #ebeff4;
+}
+*/
+.form-group input::placeholder {
+    color: #504d4d;
+    font-size:18px;
+}

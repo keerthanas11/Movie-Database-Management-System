@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Database Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    
+    <style>
+    .new-main-heading {
+        margin-top: -150px;
+    }
+    </style>
+</head>
+<body>
+    <div class="new-background-div">
+        
+        <h1 class="new-main-heading">Search By Actor</h1>
+        <div class="new-search-bar-container">
+            <form action="/search" method="post" class="search-form">
+                <input type="text" placeholder="Search by actors......." class="new-search-bar" name="actor_name">
+                <button class="new-search-button" type="submit">Search</button>
+            </form>
+        </div>
+    
+        <h2>Movies featuring actor: {{ actor_name }}</h2>
+        {% if results %}
+            <ul>
+                {% for movie, lang in results %}
+                    <li>Movie: {{ movie }}, Language: {{ lang }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No movies found featuring actor: {{ actor_name }}</p>
+        {% endif %}
+        <div class="back">
+        <button onclick="openPage('/')">Back</button>
+        </div>
+    </div>
+    <script>
+        function openPage(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>

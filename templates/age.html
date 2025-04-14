@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Movie Database Management System</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <style>
+            .new-main-heading {
+                margin-top: -250px;
+            }
+            .new-search-button{
+                margin-left: 300px;
+            }
+            </style>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                  var minAgeInput = document.getElementById('min_age');
+                  var maxAgeInput = document.getElementById('max_age');
+              
+                  minAgeInput.addEventListener('input', function() {
+                    validateAgeRange();
+                  });
+              
+                  maxAgeInput.addEventListener('input', function() {
+                    validateAgeRange();
+                  });
+              
+                  function validateAgeRange() {
+                    var minAge = parseInt(minAgeInput.value);
+                    var maxAge = parseInt(maxAgeInput.value);
+              
+                    if (minAge >= maxAge) {
+                      minAgeInput.setCustomValidity('Minimum age must be less than maximum age.');
+                    } else {
+                      minAgeInput.setCustomValidity('');
+                    }
+                  }
+                });
+              </script>
+    </head>
+<body>
+    <div class="new-background-div">
+        <h1 class="new-main-heading">Search by Actors Age and Release Year</h1>
+        <div class="search-container">
+        <form action="/search_by_criteria" method="post" class="search-form">
+            <div class="form-group">
+            <input type="number" id="min_age" name="min_age" placeholder="Min actor age" min="5" max="99" required></div>
+            <div class="form-group">
+            <input type="number" id="max_age" name="max_age" placeholder="Max actor age" min="6" max="100" required></div>
+            <div class="form-group">
+            <input type="number" name="release_year" placeholder="Release year after" min="1960" max="2024" required></div>
+            <button class="new-search-button" type="submit">Search</button>
+            
+        </form>
+        </div>
+       
+    <script>
+        function openPage(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>

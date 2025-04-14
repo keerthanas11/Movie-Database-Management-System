@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Movie Details</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-div">
+        <h1 class="main-heading">Movie Database Management System</h1>
+        <div class="navbar">
+            <button onclick="openPage('/search_by_actor')" id="tab1">Search by Actor</button>
+            <button onclick="openPage('/search_by_movie')" id="tab2">Search by Movie</button>
+            <button onclick="openPage('/search_by_c')" id="tab2">Search by Criteria</button>
+            <button onclick="openPage('/search_by_age_language')" id="tab4">Search By Age and language</button>
+            <button onclick="openPage('/search_by_count')" id="tab5">Search by Movie count</button>
+    
+        </div>
+        
+    </div>
+
+    
+    <script>
+        function openPage(page) {
+            window.location.href = page;
+        }
+    </script>
+
+</body>
+</html>

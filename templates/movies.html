@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Database Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    
+</head>
+<body>
+    <div class="new-background-div">
+        <h1 class="new-main-heading">Search For Movies</h1>
+        <div class="new-search-bar-container">
+            <form action="/search2" method="post">
+                
+            <input type="text" placeholder="Search for movies....." class="new-search-bar" name="movie_name">
+            <button class="new-search-button" type="submit">Search
+            </button>
+            
+        </form>
+        
+    </div>
+    <script>
+        function openPage(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>

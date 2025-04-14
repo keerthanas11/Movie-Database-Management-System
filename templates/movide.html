@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .new-main-heading{
+            margin-top: -210px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="new-background-div">
+        <h1 class="new-main-heading">Search For Movies</h1>
+        <div class="new-search-bar-container">
+            <form action="/search2" method="post">
+                
+            <input type="text" placeholder="Search for movies....." class="new-search-bar" name="movie_name">
+            <button class="new-search-button" type="submit">Search
+                
+            </button></div>
+        </form>
+    
+
+    <h2>Details for movie: {{ movie_name }}</h2>
+    {% if results %}
+        {% for movie_info in results %}
+            <ul>
+                <li>Language: {{ movie_info[1] }}</li>
+                <li>Genre: {{ movie_info[2] }}</li>
+                <li>Movie Length: {{ movie_info[3] }}</li>
+                <li>Director: {{ movie_info[4] }}</li>
+                <li>Actors: {{ movie_info[5] }}</li>
+                <li>Production Company: {{ movie_info[6] }}</li>
+            </ul>
+        {% endfor %}
+    {% else %}
+        <p>No details found for movie: {{ movie_name }}</p>
+    {% endif %}
+    <div class="back">
+    <button onclick="openPage('/')">Back</button>
+</div>
+</div>
+<script>
+    function openPage(page) {
+        window.location.href = page;
+    }
+</script>
+</body>
+</html>
